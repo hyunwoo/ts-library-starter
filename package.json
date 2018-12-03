@@ -1,10 +1,11 @@
 {
-  "name": "webpack-library-starter",
-  "version": "1.0.2",
-  "description": "Produce universal library with webpack and es6",
-  "main": "lib/webpack-library-starter.js",
+  "name": "ts.library.starter",
+  "version": "0.0.0",
+  "description": "Produce universal library with webpack and TypeScript",
+  "main": "lib/index.js",
   "scripts": {
-    "build": "webpack --env dev && webpack --env build && npm run test",
+    "tsbuild": "./node_modules/.bin/tsc",
+    "webpack:build": "webpack --env dev && webpack --env build && npm run test",
     "dev": "webpack --progress --colors --watch --env dev",
     "test": "mocha --require babel-register --colors ./test/*.spec.js",
     "test:watch": "mocha --require babel-register --colors -w ./test/*.spec.js",
@@ -17,6 +18,7 @@
   },
   "keywords": [
     "webpack",
+    "typescript",
     "es6",
     "starter",
     "library",
@@ -24,12 +26,12 @@
     "umd",
     "commonjs"
   ],
-  "author": "Krasimir Tsonev",
+  "author": "h.hyunwoo@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/krasimir/webpack-library-starter/issues"
+    "url": "https://github.com/hyunwoo/util.common/issue"
   },
-  "homepage": "https://github.com/krasimir/webpack-library-starter",
+  "homepage": "https://github.com/hyunwoo/util.common",
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.51",
     "@babel/core": "^7.0.0-beta.51",
@@ -44,14 +46,18 @@
     "cross-env": "^5.2.0",
     "eslint": "^5.0.1",
     "eslint-loader": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "jsdom": "11.11.0",
     "jsdom-global": "3.0.2",
     "mocha": "^4.0.1",
+    "nyc": "^13.1.0",
+    "prettier-eslint": "^8.8.2",
+    "ts-loader": "^5.3.1",
+    "typescript": "^3.2.1",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.12.2",
     "webpack-cli": "^3.0.8",
-    "yargs": "^10.0.3",
-    "nyc": "^13.1.0"
+    "yargs": "^10.0.3"
   },
   "nyc": {
     "sourceMap": false,
